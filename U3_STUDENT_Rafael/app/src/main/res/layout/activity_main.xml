@@ -36,11 +36,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:minWidth="48dp"
+        android:minHeight="48dp"
         android:text="@string/text_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox_clear" />
-
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_clear"
+        tools:ignore="TouchTargetSizeCheck"/>
     <TextView
         android:id="@+id/textView_showText"
         android:layout_width="match_parent"
@@ -124,7 +126,7 @@
         android:id="@+id/switch_chrono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text_start"
+        android:text="@string/text_stop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

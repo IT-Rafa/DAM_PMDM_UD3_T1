@@ -79,7 +79,6 @@
         android:layout_height="wrap_content"
         android:drawSelectorOnTop="true"
         android:entries="@array/galicianProvinces"
-        android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separator_rb_blue_Bottom" />
 
@@ -97,8 +96,8 @@
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switch_chrono"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_start"
+        android:layout_height="10dp"
+        android:text="@string/text_stop"
         app:layout_constraintLeft_toLeftOf="@+id/textView_chrono"
         app:layout_constraintRight_toRightOf="@+id/textView_chrono"
         app:layout_constraintTop_toBottomOf="@+id/textView_chrono" />
