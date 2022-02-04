@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/source/dam/pmdm/DAM_PMDM_UD3_T1/U3_STUDENT_Rafael/app/src/main/res/layout-land/activity_main.xml" value="0.33" />
         <entry key="..\:/source/dam/pmdm/DAM_PMDM_UD3_T1/U3_STUDENT_Rafael/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/source/dam/pmdm/DAM_PMDM_UD3_T1/U3_STUDENT_Rafael/app/src/main/res/layout/layout_land.xml" value="0.1" />
       </map>
     </option>
   </component>
