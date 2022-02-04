@@ -15,4 +15,5 @@
     <string name="text_toast_no_gal"> You have not selected a Galician Province</string>
     <string name="img_description"> Picture of Hercules Tower</string>
     <string name="province">province</string>
+    <string name="chronoText">00:00</string>
 </resources>

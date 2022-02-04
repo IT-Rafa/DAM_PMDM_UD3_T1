@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".MainActivity">
 
     <EditText
         android:id="@+id/editText_inputText"
@@ -13,9 +13,12 @@
         android:layout_height="wrap_content"
         android:background="@color/green"
         android:hint="@string/text_hint"
+        android:paddingHorizontal="5dp"
+        android:importantForAutofill="no"
         android:inputType="textShortMessage"
         android:minHeight="48dp"
         android:singleLine="true"
+        android:textColorHint="#004D40"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="16dp" />
 
@@ -64,7 +67,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_showText" />
 
     <View
-        android:id="@+id/view_HorSeparator"
+        android:id="@+id/separator_rb_blue_Bottom"
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@color/black"
@@ -74,9 +77,57 @@
         android:id="@+id/spinner_provincesList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/province"
+        android:drawSelectorOnTop="true"
+        android:entries="@array/galicianProvinces"
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_HorSeparator" />
+        app:layout_constraintTop_toBottomOf="@+id/separator_rb_blue_Bottom" />
+
+    <View
+        android:id="@+id/separator_provincesBottom"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_provincesList" />
+
+    <ImageView
+        android:id="@+id/imageView_picture"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:contentDescription="@string/img_description"
+        android:scaleType="fitCenter"
+        android:src="@drawable/a_coruna"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/separator_provincesBottom" />
+
+    <View
+        android:id="@+id/separator_picture_Bottom"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_picture" />
+
+
+    <TextView
+        android:id="@+id/textView_chrono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="@string/chronoText"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/switch_chrono"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_chrono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/separator_picture_Bottom" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
