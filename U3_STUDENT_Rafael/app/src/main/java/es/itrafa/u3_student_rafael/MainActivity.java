@@ -3,6 +3,7 @@ package es.itrafa.u3_student_rafael;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                     textView_showText.setText((""));
                 } else {
                     //add
-                    textView_showText.append(editText_inputText.getText());
+                    textView_showText.append(editText_inputText.getText().toString());
                 }
             }
         });
@@ -71,7 +72,27 @@ public class MainActivity extends AppCompatActivity {
         spinner_provincesList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                Toast.makeText(getApplicationContext(), "Seleccionaste", Toast.LENGTH_SHORT).show();
+                String selected = spinner_provincesList.getSelectedItem().toString();
+                Drawable drawable;
+                switch (selected) {
+                    case "A Coruña":
+                        drawable = getResources().getDrawable(R.drawable.a_coruna, getTheme());
+                        break;
+                    case "Lugo":
+                        drawable = getResources().getDrawable(R.drawable.lugo, getTheme());
+                        break;
+                    case "Ourense":
+                        drawable = getResources().getDrawable(R.drawable.orense, getTheme());
+                        break;
+                    case "Pontevedra":
+                        drawable = getResources().getDrawable(R.drawable.pontevedra, getTheme());
+                        break;
+                    default:
+                        drawable = getResources().getDrawable(R.drawable.a_coruna, getTheme());
+                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.text_toast_no_gal), Toast.LENGTH_SHORT).show();
+                }
+                imageView_picture.setImageDrawable(drawable);
+
             }
 
             @Override
