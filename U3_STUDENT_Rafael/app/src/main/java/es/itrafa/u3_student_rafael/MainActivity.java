@@ -74,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 String selected = spinner_provincesList.getSelectedItem().toString();
                 Drawable drawable;
+                String msg;
+                msg = getResources().getString(R.string.text_toast_gal);
                 switch (selected) {
                     case "A Coruña":
                         drawable = getResources().getDrawable(R.drawable.a_coruna, getTheme());
@@ -88,16 +90,27 @@ public class MainActivity extends AppCompatActivity {
                         drawable = getResources().getDrawable(R.drawable.pontevedra, getTheme());
                         break;
                     default:
-                        drawable = getResources().getDrawable(R.drawable.a_coruna, getTheme());
-                        Toast.makeText(getApplicationContext(), getResources().getString(R.string.text_toast_no_gal), Toast.LENGTH_SHORT).show();
+                        drawable = getResources().getDrawable(R.drawable.ic_no_image_icon, getTheme());
+                        msg = getResources().getString(R.string.text_toast_no_gal);
                 }
                 imageView_picture.setImageDrawable(drawable);
+                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+
 
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
                 // your code here
+            }
+        });
+
+
+        imageView_picture.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                String msg = getResources().getString(R.string.text_toast_no_gal);
+                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
             }
         });
 

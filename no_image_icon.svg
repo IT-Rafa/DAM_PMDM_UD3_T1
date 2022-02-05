@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="false"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.46324355"
-     inkscape:cx="355.10478"
-     inkscape:cy="419.86554"
+     inkscape:zoom="0.32756266"
+     inkscape:cx="392.29136"
+     inkscape:cy="416.71417"
      inkscape:window-width="1366"
      inkscape:window-height="705"
      inkscape:window-x="-8"
@@ -46,39 +46,112 @@
     <g
        id="g4238">
       <g
-         id="g7673">
+         id="g11242"
+         transform="translate(0.18037114,2.8557697)">
         <rect
            style="opacity:0.919872;fill:#ff0000;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-           id="rect846"
+           id="rect828"
            width="123.94038"
            height="123.94038"
-           x="34.840382"
-           y="42.836536"
+           x="177.62885"
+           y="39.980766"
            rx="0.71394104"
            ry="1.4278848" />
         <circle
            style="opacity:0.919872;fill:#ffffff;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-           id="path4034"
-           cx="96.81057"
-           cy="104.80672"
-           r="58.257694" />
+           id="circle830"
+           cx="239.59903"
+           cy="101.95095"
+           r="51.975002" />
         <text
            xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:25.4538px;line-height:1.25;font-family:sans-serif;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.264582"
-           x="93.667137"
-           y="100.32101"
-           id="text1318"
-           transform="scale(1.0378403,0.96353934)"><tspan
+           style="font-style:normal;font-weight:normal;font-size:21.4068px;line-height:1.25;font-family:sans-serif;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.264582"
+           x="244.69405"
+           y="94.155289"
+           id="text836"
+           transform="scale(0.9783347,1.0221451)"><tspan
              sodipodi:role="line"
              style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#ff0000;stroke-width:0.264582"
-             x="93.667137"
-             y="100.32101"
-             id="tspan6728">NO</tspan><tspan
+             x="244.69405"
+             y="94.155289"
+             id="tspan832">SIN</tspan><tspan
              sodipodi:role="line"
              style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#ff0000;stroke-width:0.264582"
-             x="93.667137"
-             y="132.1382"
-             id="tspan6974">IMAGE</tspan></text>
+             x="244.69405"
+             y="120.91379"
+             id="tspan834">IMAGEN</tspan></text>
+      </g>
+      <g
+         id="g1056"
+         transform="translate(-142.78846,142.59367)">
+        <rect
+           style="opacity:0.919872;fill:#ff0000;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+           id="rect1046"
+           width="123.94038"
+           height="123.94038"
+           x="177.62885"
+           y="39.980766"
+           rx="0.71394104"
+           ry="1.4278848" />
+        <circle
+           style="opacity:0.919872;fill:#ffffff;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+           id="circle1048"
+           cx="239.59903"
+           cy="101.95095"
+           r="51.975002" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:22.7088px;line-height:1.25;font-family:sans-serif;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.264582"
+           x="230.65242"
+           y="99.882126"
+           id="text1054"
+           transform="scale(1.0378403,0.96353938)"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#ff0000;stroke-width:0.264582"
+             x="230.65242"
+             y="99.882126"
+             id="tspan1050">NO</tspan><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#ff0000;stroke-width:0.264582"
+             x="230.65242"
+             y="128.26813"
+             id="tspan1052">IMAGE</tspan></text>
+      </g>
+      <g
+         id="g11249"
+         transform="translate(0.98809816,1.0861117)">
+        <rect
+           style="opacity:0.919872;fill:#ff0000;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+           id="rect1058"
+           width="123.94038"
+           height="123.94038"
+           x="178.43658"
+           y="187.14246"
+           rx="0.71394104"
+           ry="1.4278848" />
+        <circle
+           style="opacity:0.919872;fill:#ffffff;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+           id="circle1060"
+           cx="240.40677"
+           cy="249.11264"
+           r="51.975002" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:22.5782px;line-height:1.25;font-family:sans-serif;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.264582"
+           x="232.67311"
+           y="251.15948"
+           id="text1066"
+           transform="scale(1.0318708,0.96911358)"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#ff0000;stroke-width:0.264582"
+             x="232.67311"
+             y="251.15948"
+             id="tspan1062">SEN</tspan><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#ff0000;stroke-width:0.264582"
+             x="232.67311"
+             y="279.38223"
+             id="tspan1064">IMAXE</tspan></text>
       </g>
     </g>
   </g>

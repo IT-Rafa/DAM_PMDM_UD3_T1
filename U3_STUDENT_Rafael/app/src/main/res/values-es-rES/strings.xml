@@ -5,14 +5,20 @@
     <string name="text_blue">Azúl</string>
     <string name="text_start">INICIAR</string>
     <string name="text_stop">PARAR</string>
-    <string name="text_image">Torre de Hércules</string>
+    <string name="text_image_aCoruna">Torre de Hércules</string>
     <string name="text_toast_gal">Has seleccionado una provincia gallega</string>
     <string name="text_toast_no_gal">No has seleccionado una provincia gallega</string>
-    <string name="img_description">Foto de la torre de Hérculesw</string>
+    <string name="img_description_aCoruna">Foto de la torre de Hérculesw</string>
     <string name="province">Provincia</string>
     <string name="action_settings">Configuración</string>
     <string name="text_clear">Limpiar</string>
     <string name="text_button">Añadir / Limpiar</string>
     <string name="text_label">"Aquí es donde verás el texto que escribiste: "</string>
     <string name="text_hint">Escribe algún texto y pulsa el botón</string>
+    <string name="text_image_pontevedra">Ermita de la Virgen Peregrina</string>
+    <string name="img_description_lugo">Foto del Muro Romano de Lugo</string>
+    <string name="img_description_orense">Foto de la Catedral de Ourense</string>
+    <string name="img_description_pontevedra">Foto de la Er,ota de la Virgen Peregrina</string>
+    <string name="text_image_lugo">Muro romano - Lugo</string>
+    <string name="text_image_orense">Catedral de Orense - Orense</string>
 </resources>
