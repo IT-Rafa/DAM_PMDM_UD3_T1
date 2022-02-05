@@ -4,15 +4,15 @@
     <string name="action_settings">Configuración</string>
     <string name="text_clear">Limpar</string>
     <string name="text_button">Añadir / Limpar</string>
-    <string name="text_label">Aquí e onde verás o texto que escribiches</string>
+    <string name="text_label">"Aquí e onde verás o texto que escribiches: "</string>
     <string name="text_hint">Escribe algún texto e prema o botón</string>
     <string name="text_red">Vermello</string>
     <string name="text_blue">Azúl</string>
-    <string name="text_start">Iniciar</string>
-    <string name="text_stop">Parar</string>
+    <string name="text_start">INICIAR</string>
+    <string name="text_stop">PARAR</string>
     <string name="text_image">Torre de Hérclules - A Coruña</string>
     <string name="text_toast_gal">Seleccionaches unha provincia galega</string>
-    <string name="text_toast_no_gal">Non has seleccionado unha provincia galega</string>
+    <string name="text_toast_no_gal">Non seleccionaches unha provincia galega</string>
     <string name="img_description">Foto da torre de Hércules</string>
     <string name="province">Provincia</string>
 </resources>
