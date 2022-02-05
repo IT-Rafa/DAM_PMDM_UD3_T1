@@ -103,6 +103,7 @@
         android:contentDescription="@string/img_description_aCoruna"
         android:scaleType="fitCenter"
         android:src="@drawable/a_coruna"
+        android:tag="@string/text_image_aCoruna"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separator_provincesBottom" />
@@ -114,15 +115,11 @@
         android:background="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/imageView_picture" />
 
-    <TextView
-        android:id="@+id/textView_chrono"
+    <Chronometer
+        android:id="@+id/chronometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="monospace"
-        android:text="@string/chronoText"
-        android:textSize="16sp"
-
-
+        android:layout_gravity="center_horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separator_picture_Bottom"
@@ -130,13 +127,13 @@
         app:layout_constraintVertical_bias="0.3" />
 
     <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switch_chrono"
+        android:id="@+id/switch_chronometer"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:text="@string/text_stop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_chrono" />
+        app:layout_constraintTop_toBottomOf="@+id/chronometer" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

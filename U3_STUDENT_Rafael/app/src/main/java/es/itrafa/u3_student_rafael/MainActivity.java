@@ -2,16 +2,18 @@ package es.itrafa.u3_student_rafael;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -30,42 +32,33 @@ public class MainActivity extends AppCompatActivity {
         Button button_addClear = findViewById(R.id.button_addClear);
         TextView textView_showText = findViewById(R.id.textView_showText);
         RadioGroup radioGroup_color = findViewById(R.id.radioGroup_color);
-        RadioButton radioButton_red = findViewById(R.id.radioButton_red);
-        RadioButton radioButton_blue = findViewById(R.id.radioButton_blue);
         Spinner spinner_provincesList = findViewById(R.id.spinner_provincesList);
         ImageView imageView_picture = findViewById(R.id.imageView_picture);
-        TextView textView_chrono = findViewById(R.id.textView_chrono);
-        SwitchCompat switch_chrono = findViewById(R.id.switch_chrono);
+        Chronometer chronometer = findViewById(R.id.chronometer);
+        SwitchCompat switch_chronometer = findViewById(R.id.switch_chronometer);
 
 
-        button_addClear.setOnClickListener(new View.OnClickListener() {
+        button_addClear.setOnClickListener(v -> {
 
-            public void onClick(View v) {
-
-                if (checkBox_clear.isChecked()) {
-                    //clear
-                    editText_inputText.setText((""));
-                    textView_showText.setText((""));
-                } else {
-                    //add
-                    textView_showText.append(editText_inputText.getText().toString());
-                }
+            if (checkBox_clear.isChecked()) {
+                //clear
+                editText_inputText.setText((""));
+                textView_showText.setText((""));
+            } else {
+                //add
+                textView_showText.append(editText_inputText.getText().toString());
             }
         });
 
-        radioGroup_color.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId) {
-                    case R.id.radioButton_red:
-                        textView_showText.setTextColor(getResources().getColor(R.color.red));
-                        break;
-                    case R.id.radioButton_blue:
-                        textView_showText.setTextColor(getResources().getColor(R.color.blue));
-                        break;
-                    default:
-                        throw new IllegalStateException("Unexpected value: " + checkedId);
-                }
+        radioGroup_color.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == R.id.radioButton_red) {
+
+                textView_showText.setTextColor(getResources().getColor(R.color.red));
+            } else if (checkedId == R.id.radioButton_blue) {
+
+                textView_showText.setTextColor(getResources().getColor(R.color.blue));
+            } else {
+                throw new IllegalStateException("Unexpected value: " + checkedId);
             }
         });
 
@@ -75,25 +68,44 @@ public class MainActivity extends AppCompatActivity {
                 String selected = spinner_provincesList.getSelectedItem().toString();
                 Drawable drawable;
                 String msg;
+                String contentDescription;
+                String tag;
                 msg = getResources().getString(R.string.text_toast_gal);
                 switch (selected) {
                     case "A Coruña":
-                        drawable = getResources().getDrawable(R.drawable.a_coruna, getTheme());
+                        drawable = ResourcesCompat.getDrawable(getResources(), R.drawable.a_coruna, null);
+                        contentDescription = getResources().getString(R.string.img_description_aCoruna);
+                        tag = getResources().getString(R.string.text_image_aCoruna);
+
                         break;
                     case "Lugo":
-                        drawable = getResources().getDrawable(R.drawable.lugo, getTheme());
+                        drawable =  ResourcesCompat.getDrawable(getResources(), R.drawable.lugo, null);
+                        contentDescription = getResources().getString(R.string.img_description_lugo);
+                        tag = getResources().getString(R.string.text_image_lugo);
+
                         break;
                     case "Ourense":
-                        drawable = getResources().getDrawable(R.drawable.orense, getTheme());
+                        drawable =  ResourcesCompat.getDrawable(getResources(), R.drawable.orense, null);
+                        contentDescription = getResources().getString(R.string.img_description_orense);
+                        tag = getResources().getString(R.string.text_image_orense);
+
                         break;
                     case "Pontevedra":
-                        drawable = getResources().getDrawable(R.drawable.pontevedra, getTheme());
+                        drawable =  ResourcesCompat.getDrawable(getResources(), R.drawable.pontevedra, null);
+                        contentDescription = getResources().getString(R.string.img_description_pontevedra);
+                        tag = getResources().getString(R.string.text_image_pontevedra);
+
                         break;
                     default:
-                        drawable = getResources().getDrawable(R.drawable.ic_no_image_icon, getTheme());
+                        drawable =  ResourcesCompat.getDrawable(getResources(), R.drawable.ic_no_image_icon, null);
+                        contentDescription = "";
+                        tag = getResources().getString(R.string.text_image_none);
                         msg = getResources().getString(R.string.text_toast_no_gal);
                 }
                 imageView_picture.setImageDrawable(drawable);
+                imageView_picture.setContentDescription(contentDescription);
+                imageView_picture.setTag(tag);
+
                 Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
 
 
@@ -106,13 +118,25 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        imageView_picture.setOnClickListener(new View.OnClickListener() {
+        imageView_picture.setOnClickListener(v -> {
+            Toast.makeText(getApplicationContext(), imageView_picture.getTag().toString()  , Toast.LENGTH_SHORT).show();
+        });
 
-            public void onClick(View v) {
-                String msg = getResources().getString(R.string.text_toast_no_gal);
-                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+        switch_chronometer.setOnCheckedChangeListener((compoundButton, active) -> {
+            if(active){
+                compoundButton.setText(R.string.text_start);
+                chronometer.setBase(SystemClock.elapsedRealtime());
+                chronometer.start();
+            }else{
+                compoundButton.setText(R.string.text_stop);
+                chronometer.stop();
             }
         });
 
+        chronometer.setOnChronometerTickListener(c -> {
+            if(c.getText().equals("00:15")) {
+                this.finish();
+            }
+        });
     }
 }

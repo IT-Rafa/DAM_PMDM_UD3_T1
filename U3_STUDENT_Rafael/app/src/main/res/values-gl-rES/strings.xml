@@ -8,8 +8,8 @@
     <string name="text_hint">Escribe algún texto e prema o botón</string>
     <string name="text_red">Vermello</string>
     <string name="text_blue">Azúl</string>
-    <string name="text_start">INICIAR</string>
-    <string name="text_stop">PARAR</string>
+    <string name="text_start">INICIADO</string>
+    <string name="text_stop">PARADO</string>
     <string name="text_image_aCoruna">Torre de Hérclules - A Coruña</string>
     <string name="text_toast_gal">Seleccionaches unha provincia galega</string>
     <string name="text_toast_no_gal">Non seleccionaches unha provincia galega</string>
@@ -21,4 +21,5 @@
     <string name="img_description_orense">Foto da Catedral de Ourense</string>
     <string name="text_image_lugo">Muro Romano - Lugo</string>
     <string name="text_image_orense">Catedral de Ourense - Ourense</string>
+    <string name="text_image_none">Sen imaxe</string>
 </resources>

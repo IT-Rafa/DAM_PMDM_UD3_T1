@@ -28,8 +28,7 @@
         android:layout_marginStart="5dp"
         android:text="@string/text_clear"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_inputText"
-        android:inputType="textAutoCorrect"/>
+        app:layout_constraintTop_toBottomOf="@+id/editText_inputText" />
 
     <Button
         android:id="@+id/button_addClear"
@@ -45,8 +44,7 @@
         android:layout_height="wrap_content"
         android:text="@string/text_label"
         android:textColor="@color/red"
-        app:layout_constraintTop_toBottomOf="@+id/button_addClear"
-        android:inputType="textVisiblePassword" />
+        app:layout_constraintTop_toBottomOf="@+id/button_addClear" />
 
     <RadioGroup
         android:id="@+id/radioGroup_color"
@@ -91,25 +89,23 @@
         app:layout_constraintStart_toStartOf="@+id/radioGroup_color"
         app:layout_constraintTop_toBottomOf="@+id/separator_radioGroup_Bottom" />
 
-    <TextView
-        android:id="@+id/textView_chrono"
+
+    <Chronometer
+        android:id="@+id/chronometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="monospace"
-        android:text="@string/chronoText"
-        android:textSize="16sp"
-
+        android:layout_gravity="center_horizontal"
         app:layout_constraintStart_toEndOf="@+id/radioGroup_color"
-        app:layout_constraintTop_toTopOf="@+id/spinner_provincesList" />
+        app:layout_constraintTop_toBottomOf="@+id/separator_radioGroup_Bottom" />
 
     <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switch_chrono"
+        android:id="@+id/switch_chronometer"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:text="@string/text_stop"
-        app:layout_constraintEnd_toEndOf="@+id/textView_chrono"
-        app:layout_constraintStart_toStartOf="@+id/textView_chrono"
-        app:layout_constraintTop_toBottomOf="@+id/textView_chrono" />
+        app:layout_constraintEnd_toEndOf="@+id/chronometer"
+        app:layout_constraintStart_toStartOf="@+id/chronometer"
+        app:layout_constraintTop_toBottomOf="@+id/chronometer" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

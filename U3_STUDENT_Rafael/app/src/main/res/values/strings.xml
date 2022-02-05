@@ -10,6 +10,7 @@
     <string name="text_blue">Blue</string>
     <string name="text_start">START</string>
     <string name="text_stop">STOP</string>
+    <string name="text_image_none">no image</string>
     <string name="text_image_aCoruna">Hercules Tower - A Coruña</string>
     <string name="text_image_lugo">Roman Wall - Lugo</string>
     <string name="text_image_orense">Ourense Cathedral - Ourense</string>
