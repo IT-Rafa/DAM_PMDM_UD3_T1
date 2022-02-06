@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.core.content.res.ResourcesCompat;
 
+import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -25,6 +26,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        View view = getWindow().getDecorView();
+        int orientation = getResources().getConfiguration().orientation;
+        if (Configuration.ORIENTATION_LANDSCAPE == orientation) {
+            //Do SomeThing; // Landscape
+        } else {
+            //Do SomeThing;  // Portrait
+        }
 
 
         EditText editText_inputText = findViewById(R.id.editText_inputText);
@@ -65,50 +74,53 @@ public class MainActivity extends AppCompatActivity {
         spinner_provincesList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                String selected = spinner_provincesList.getSelectedItem().toString();
-                Drawable drawable;
-                String msg;
-                String contentDescription;
-                String tag;
-                msg = getResources().getString(R.string.text_toast_gal);
-                switch (selected) {
-                    case "A Coruña":
-                        drawable = ResourcesCompat.getDrawable(getResources(), R.drawable.a_coruna, null);
-                        contentDescription = getResources().getString(R.string.img_description_aCoruna);
-                        tag = getResources().getString(R.string.text_image_aCoruna);
 
-                        break;
-                    case "Lugo":
-                        drawable =  ResourcesCompat.getDrawable(getResources(), R.drawable.lugo, null);
-                        contentDescription = getResources().getString(R.string.img_description_lugo);
-                        tag = getResources().getString(R.string.text_image_lugo);
+                    String selected = spinner_provincesList.getSelectedItem().toString();
+                    Drawable drawable;
+                    String msg;
+                    String contentDescription;
+                    String tag;
+                    msg = getResources().getString(R.string.text_toast_gal);
 
-                        break;
-                    case "Ourense":
-                        drawable =  ResourcesCompat.getDrawable(getResources(), R.drawable.orense, null);
-                        contentDescription = getResources().getString(R.string.img_description_orense);
-                        tag = getResources().getString(R.string.text_image_orense);
+                    switch (selected) {
+                        case "A Coruña":
+                            drawable = ResourcesCompat.getDrawable(getResources(), R.drawable.a_coruna, null);
+                            contentDescription = getResources().getString(R.string.img_description_aCoruna);
+                            tag = getResources().getString(R.string.text_image_aCoruna);
 
-                        break;
-                    case "Pontevedra":
-                        drawable =  ResourcesCompat.getDrawable(getResources(), R.drawable.pontevedra, null);
-                        contentDescription = getResources().getString(R.string.img_description_pontevedra);
-                        tag = getResources().getString(R.string.text_image_pontevedra);
+                            break;
+                        case "Lugo":
+                            drawable =  ResourcesCompat.getDrawable(getResources(), R.drawable.lugo, null);
+                            contentDescription = getResources().getString(R.string.img_description_lugo);
+                            tag = getResources().getString(R.string.text_image_lugo);
 
-                        break;
-                    default:
-                        drawable =  ResourcesCompat.getDrawable(getResources(), R.drawable.ic_no_image_icon, null);
-                        contentDescription = "";
-                        tag = getResources().getString(R.string.text_image_none);
-                        msg = getResources().getString(R.string.text_toast_no_gal);
-                }
-                imageView_picture.setImageDrawable(drawable);
-                imageView_picture.setContentDescription(contentDescription);
-                imageView_picture.setTag(tag);
+                            break;
+                        case "Ourense":
+                            drawable =  ResourcesCompat.getDrawable(getResources(), R.drawable.orense, null);
+                            contentDescription = getResources().getString(R.string.img_description_orense);
+                            tag = getResources().getString(R.string.text_image_orense);
 
-                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+                            break;
+                        case "Pontevedra":
+                            drawable =  ResourcesCompat.getDrawable(getResources(), R.drawable.pontevedra, null);
+                            contentDescription = getResources().getString(R.string.img_description_pontevedra);
+                            tag = getResources().getString(R.string.text_image_pontevedra);
+
+                            break;
+                        default:
+                            drawable =  ResourcesCompat.getDrawable(getResources(), R.drawable.ic_no_image_icon, null);
+                            contentDescription = "";
+                            tag = getResources().getString(R.string.text_image_none);
+                            msg = getResources().getString(R.string.text_toast_no_gal);
+                    }
+                    if(imageView_picture != null){
+                        imageView_picture.setImageDrawable(drawable);
+                        imageView_picture.setContentDescription(contentDescription);
+                        imageView_picture.setTag(tag);
+                    }
 
 
+                    Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -117,21 +129,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        if(imageView_picture != null){
+            imageView_picture.setOnClickListener(v -> {
+                Toast.makeText(getApplicationContext(), imageView_picture.getTag().toString()  , Toast.LENGTH_SHORT).show();
+            });
 
-        imageView_picture.setOnClickListener(v -> {
-            Toast.makeText(getApplicationContext(), imageView_picture.getTag().toString()  , Toast.LENGTH_SHORT).show();
-        });
+            switch_chronometer.setOnCheckedChangeListener((compoundButton, active) -> {
+                if(active){
+                    compoundButton.setText(R.string.text_start);
+                    chronometer.setBase(SystemClock.elapsedRealtime());
+                    chronometer.start();
+                }else{
+                    compoundButton.setText(R.string.text_stop);
+                    chronometer.stop();
+                }
+            });
+        }
 
-        switch_chronometer.setOnCheckedChangeListener((compoundButton, active) -> {
-            if(active){
-                compoundButton.setText(R.string.text_start);
-                chronometer.setBase(SystemClock.elapsedRealtime());
-                chronometer.start();
-            }else{
-                compoundButton.setText(R.string.text_stop);
-                chronometer.stop();
-            }
-        });
 
         chronometer.setOnChronometerTickListener(c -> {
             if(c.getText().equals("00:15")) {
