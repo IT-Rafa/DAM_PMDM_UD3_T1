@@ -2,14 +2,10 @@ package es.itrafa.u3_student_rafael;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
-import androidx.core.content.res.ResourcesCompat;
-
 import android.content.res.Configuration;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Chronometer;
@@ -70,64 +66,10 @@ public class MainActivity extends AppCompatActivity {
                 throw new IllegalStateException("Unexpected value: " + checkedId);
             }
         });
+        OnByUserItemSelectedListener listener = new OnByUserItemSelectedListener();
+        spinner_provincesList.setOnTouchListener(listener);
+        spinner_provincesList.setOnItemSelectedListener(listener);
 
-        spinner_provincesList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-
-                    String selected = spinner_provincesList.getSelectedItem().toString();
-                    Drawable drawable;
-                    String msg;
-                    String contentDescription;
-                    String tag;
-                    msg = getResources().getString(R.string.text_toast_gal);
-
-                    switch (selected) {
-                        case "A Coruña":
-                            drawable = ResourcesCompat.getDrawable(getResources(), R.drawable.a_coruna, null);
-                            contentDescription = getResources().getString(R.string.img_description_aCoruna);
-                            tag = getResources().getString(R.string.text_image_aCoruna);
-
-                            break;
-                        case "Lugo":
-                            drawable =  ResourcesCompat.getDrawable(getResources(), R.drawable.lugo, null);
-                            contentDescription = getResources().getString(R.string.img_description_lugo);
-                            tag = getResources().getString(R.string.text_image_lugo);
-
-                            break;
-                        case "Ourense":
-                            drawable =  ResourcesCompat.getDrawable(getResources(), R.drawable.orense, null);
-                            contentDescription = getResources().getString(R.string.img_description_orense);
-                            tag = getResources().getString(R.string.text_image_orense);
-
-                            break;
-                        case "Pontevedra":
-                            drawable =  ResourcesCompat.getDrawable(getResources(), R.drawable.pontevedra, null);
-                            contentDescription = getResources().getString(R.string.img_description_pontevedra);
-                            tag = getResources().getString(R.string.text_image_pontevedra);
-
-                            break;
-                        default:
-                            drawable =  ResourcesCompat.getDrawable(getResources(), R.drawable.ic_no_image_icon, null);
-                            contentDescription = "";
-                            tag = getResources().getString(R.string.text_image_none);
-                            msg = getResources().getString(R.string.text_toast_no_gal);
-                    }
-                    if(imageView_picture != null){
-                        imageView_picture.setImageDrawable(drawable);
-                        imageView_picture.setContentDescription(contentDescription);
-                        imageView_picture.setTag(tag);
-                    }
-
-
-                    Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                // your code here
-            }
-        });
 
         if(imageView_picture != null){
             imageView_picture.setOnClickListener(v -> {
