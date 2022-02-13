@@ -24,13 +24,9 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private EditText editText_inputText;
     private CheckBox checkBox_clear;
-    private Button button_addClear;
     private TextView textView_showText;
-    private RadioGroup radioGroup_color;
-    private Spinner spinner_provincesList;
     private ImageView imageView_picture;
     private Chronometer chronometer;
-    private SwitchCompat switch_chronometer;
     static private int actualSpinnerSelectionPos;
 
 
@@ -41,23 +37,23 @@ public class MainActivity extends AppCompatActivity {
 
         editText_inputText = findViewById(R.id.editText_inputText);
         checkBox_clear = findViewById(R.id.checkBox_clear);
-        button_addClear = findViewById(R.id.button_addClear);
+        Button button_addClear = findViewById(R.id.button_addClear);
         textView_showText = findViewById(R.id.textView_showText);
-        radioGroup_color = findViewById(R.id.radioGroup_color);
-        spinner_provincesList = findViewById(R.id.spinner_provincesList);
+        RadioGroup radioGroup_color = findViewById(R.id.radioGroup_color);
+        Spinner spinner_provincesList = findViewById(R.id.spinner_provincesList);
         imageView_picture = findViewById(R.id.imageView_picture);
         chronometer = findViewById(R.id.chronometer);
-        switch_chronometer = findViewById(R.id.switch_chronometer);
+        SwitchCompat switch_chronometer = findViewById(R.id.switch_chronometer);
 
         //  orientation Control
         // (only show picture in portrait but can change selected picture with spinner)
         int orientation = getResources().getConfiguration().orientation;
 
         if (Configuration.ORIENTATION_LANDSCAPE == orientation) {
-            System.out.println("Cambio orientacion: landscape");
+            System.out.println("orientation changed to landscape");
 
         } else {
-            System.out.println("Cambio orientacion: portrait");
+            System.out.println("orientation changed to portrait");
             // update picture data upon selection in spinner
             // needed for when spinner changed while orientation was landscape
             // (picture view no exist so it can´t be changed)
@@ -143,13 +139,13 @@ public class MainActivity extends AppCompatActivity {
         boolean userSelect = false;
 
         /**
-         * On change show Toast message about if is a galician province or not and
+         * On change show Toast message about if is a galician province or is not, and
          * save position in a static field
          *
-         * @param parent
-         * @param view
-         * @param position
-         * @param id
+         * @param parent p
+         * @param view v
+         * @param position p
+         * @param id i
          */
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
